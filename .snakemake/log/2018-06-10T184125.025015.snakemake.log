@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 5 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+Missing input files for rule make_hamburger:
+dohoon.patty

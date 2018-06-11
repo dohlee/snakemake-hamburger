@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	make_hamburger
+	1
+
+rule make_hamburger:
+    input: bigmac.lettuce, bigmac.tomato, bigmac.cheese, bigmac.roasted_onion, bigmac.warm_bun, bigmac.pickle, bigmac.patty
+    output: bigmac.hamburger
+    jobid: 0
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/hamburger/make/.snakemake.3pqqx0cx.wrapper.py
+Removing temporary output file bigmac.roasted_onion.
+Removing temporary output file bigmac.tomato.
+Removing temporary output file bigmac.pickle.
+Removing temporary output file bigmac.patty.
+Removing temporary output file bigmac.lettuce.
+Removing temporary output file bigmac.cheese.
+Removing temporary output file bigmac.warm_bun.
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-11T181205.789426.snakemake.log

@@ -1,0 +1,3 @@
+NameError in line 3 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+name 'name' is not defined
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile", line 3, in <module>

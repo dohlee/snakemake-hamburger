@@ -1,0 +1,100 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_beef
+	1	buy_bun
+	1	buy_cheese
+	1	buy_cucumber
+	1	buy_lettuce
+	1	buy_onion
+	1	buy_tomato
+	1	buy_vinegar
+	1	make_hamburger
+	1	make_patty
+	1	make_pickle
+	1	roast_onion
+	1	warm_bun
+	1	wash_lettuce
+	1	wash_onion
+	1	wash_tomato
+	16
+
+rule buy_bun:
+    output: dohoon.cold_bun
+    jobid: 9
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/tedw3ipi.wrapper.py
+Finished job 9.
+1 of 16 steps (6%) done
+
+rule warm_bun:
+    input: dohoon.cold_bun
+    output: dohoon.warm_bun
+    jobid: 3
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/noymcup3.wrapper.py
+Removing temporary output file dohoon.cold_bun.
+Finished job 3.
+2 of 16 steps (12%) done
+
+rule buy_beef:
+    output: dohoon.beef
+    jobid: 12
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/c22tve48.wrapper.py
+Finished job 12.
+3 of 16 steps (19%) done
+
+rule make_patty:
+    input: dohoon.beef
+    output: dohoon.patty
+    jobid: 6
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/3ue3f_p4.wrapper.py
+Removing temporary output file dohoon.beef.
+Finished job 6.
+4 of 16 steps (25%) done
+
+rule buy_cheese:
+    output: dohoon.cheese
+    jobid: 2
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/82bvtfxq.wrapper.py
+Finished job 2.
+5 of 16 steps (31%) done
+
+rule buy_cucumber:
+    output: dohoon.cucumber
+    jobid: 13
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/w2618jkw.wrapper.py
+Finished job 13.
+6 of 16 steps (38%) done
+
+rule buy_vinegar:
+    output: dohoon.vinegar
+    jobid: 14
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/b3w87a07.wrapper.py
+    Error in rule buy_vinegar:
+        jobid: 14
+        output: dohoon.vinegar
+
+RuleException:
+CalledProcessError in line 43 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile_remote:
+Command ' set -euo pipefail;  /home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/scripts/b3w87a07.wrapper.py ' returned non-zero exit status 1
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile_remote", line 43, in __rule_buy_vinegar
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T214853.694339.snakemake.log

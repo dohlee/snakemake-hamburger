@@ -1,0 +1,176 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_beef
+	1	buy_bun
+	1	buy_cheese
+	1	buy_cucumber
+	1	buy_lettuce
+	1	buy_onion
+	1	buy_tomato
+	1	buy_vinegar
+	1	make_hamburger
+	1	make_patty
+	1	make_vinegar
+	1	roast_onion
+	1	warm_bun
+	1	wash_lettuce
+	1	wash_onion
+	1	wash_tomato
+	16
+
+rule buy_tomato:
+    output: dohoon.dirty_tomato
+    jobid: 13
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/tomato/buy/.snakemake.42a_4m5y.wrapper.py
+Finished job 13.
+1 of 16 steps (6%) done
+
+rule wash_tomato:
+    input: dohoon.dirty_tomato
+    output: dohoon.tomato
+    jobid: 6
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/tomato/wash/.snakemake.xdyr2um9.wrapper.py
+Finished job 6.
+2 of 16 steps (12%) done
+
+rule buy_cheese:
+    output: dohoon.cheese
+    jobid: 5
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/cheese/buy/.snakemake.467c6t44.wrapper.py
+Finished job 5.
+3 of 16 steps (19%) done
+
+rule buy_onion:
+    output: dohoon.dirty_onion
+    jobid: 15
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/buy/.snakemake.r39xr3or.wrapper.py
+Finished job 15.
+4 of 16 steps (25%) done
+
+rule wash_onion:
+    input: dohoon.dirty_onion
+    output: dohoon.onion
+    jobid: 8
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/wash/.snakemake.9lj0eute.wrapper.py
+Finished job 8.
+5 of 16 steps (31%) done
+
+rule roast_onion:
+    input: dohoon.onion
+    output: dohoon.roasted_onion
+    jobid: 1
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/roast/.snakemake.wweko5hg.wrapper.py
+Finished job 1.
+6 of 16 steps (38%) done
+
+rule buy_lettuce:
+    output: dohoon.dirty_lettuce
+    jobid: 9
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/lettuce/buy/.snakemake.fd8a1p33.wrapper.py
+Finished job 9.
+7 of 16 steps (44%) done
+
+rule wash_lettuce:
+    input: dohoon.dirty_lettuce
+    output: dohoon.lettuce
+    jobid: 2
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/lettuce/wash/.snakemake.1n6cflt_.wrapper.py
+Finished job 2.
+8 of 16 steps (50%) done
+
+rule buy_bun:
+    output: dohoon.cold_bun
+    jobid: 14
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/bun/buy/.snakemake.csuacmtp.wrapper.py
+Finished job 14.
+9 of 16 steps (56%) done
+
+rule warm_bun:
+    input: dohoon.cold_bun
+    output: dohoon.warm_bun
+    jobid: 7
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/bun/warm/.snakemake.6yso12p5.wrapper.py
+Finished job 7.
+10 of 16 steps (62%) done
+
+rule buy_cucumber:
+    output: dohoon.cucumber
+    jobid: 10
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/cucumber/buy/.snakemake._e8pj9nw.wrapper.py
+Finished job 10.
+11 of 16 steps (69%) done
+
+rule buy_beef:
+    output: dohoon.beef
+    jobid: 12
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/beef/buy/.snakemake.y5udw11x.wrapper.py
+Finished job 12.
+12 of 16 steps (75%) done
+
+rule make_patty:
+    input: dohoon.beef
+    output: dohoon.patty
+    jobid: 4
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/patty/make/.snakemake.jsby2to6.wrapper.py
+Finished job 4.
+13 of 16 steps (81%) done
+
+rule buy_vinegar:
+    output: dohoon.vinegar
+    jobid: 11
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/vinegar/buy/.snakemake.b_9tfis1.wrapper.py
+Finished job 11.
+14 of 16 steps (88%) done
+
+rule make_vinegar:
+    input: dohoon.vinegar, dohoon.cucumber
+    output: dohoon.pickle
+    jobid: 3
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/pickle/make/.snakemake.iqwmg_0f.wrapper.py
+Finished job 3.
+15 of 16 steps (94%) done
+
+rule make_hamburger:
+    input: dohoon.lettuce, dohoon.cheese, dohoon.roasted_onion, dohoon.warm_bun, dohoon.tomato, dohoon.pickle, dohoon.patty
+    output: dohoon.hamburger
+    jobid: 0
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/hamburger/make/.snakemake.xipdqifc.wrapper.py
+Finished job 0.
+16 of 16 steps (100%) done
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T212620.249867.snakemake.log

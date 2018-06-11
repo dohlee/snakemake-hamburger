@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_tomato
+	1	wash_tomato
+	2
+
+rule buy_tomato:
+    output: dohoon.dirty_tomato
+    jobid: 1
+    wildcards: name=dohoon
+
+Finished job 1.
+1 of 2 steps (50%) done
+
+rule wash_tomato:
+    input: dohoon.dirty_tomato
+    output: dohoon.tomato
+    jobid: 0
+    wildcards: name=dohoon
+
+    Error in rule wash_tomato:
+        jobid: 0
+        output: dohoon.tomato
+
+RuleException:
+CalledProcessError in line 13 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+Command ' set -euo pipefail;  /home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/tomato/wash/.snakemake.ldsx0mdy.wrapper.py ' returned non-zero exit status 1
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile", line 13, in __rule_wash_tomato
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T174342.890202.snakemake.log

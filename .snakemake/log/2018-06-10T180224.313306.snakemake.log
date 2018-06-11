@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_cucumber
+	1	buy_vinegar
+	1	make_vinegar
+	3
+
+rule buy_vinegar:
+    output: dohoon.vinegar
+    jobid: 1
+    wildcards: name=dohoon
+
+Finished job 1.
+1 of 3 steps (33%) done
+
+rule buy_cucumber:
+    output: dohoon.cucumber
+    jobid: 2
+    wildcards: name=dohoon
+
+Finished job 2.
+2 of 3 steps (67%) done
+
+rule make_vinegar:
+    input: dohoon.vinegar, dohoon.cucumber
+    output: dohoon.pickle
+    jobid: 0
+    wildcards: name=dohoon
+
+    Error in rule make_vinegar:
+        jobid: 0
+        output: dohoon.pickle
+
+RuleException:
+CalledProcessError in line 34 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+Command ' set -euo pipefail;  /home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/pickle/make/.snakemake.u6ffq6av.wrapper.py ' returned non-zero exit status 1
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile", line 34, in __rule_make_vinegar
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T180224.313306.snakemake.log

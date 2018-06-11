@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	wash_tomato
+	1
+
+rule wash_tomato:
+    input: dohoon.dirty_tomato
+    output: dohoon.tomato
+    jobid: 0
+    wildcards: name=dohoon
+
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T174404.336655.snakemake.log

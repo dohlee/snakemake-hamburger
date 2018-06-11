@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	make_hamburger
+	1	roast_onion
+	2
+
+rule roast_onion:
+    input: dohoon.onion
+    output: dohoon.roasted_onion
+    jobid: 1
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/roast/.snakemake.dgr4l7s9.wrapper.py
+Finished job 1.
+1 of 2 steps (50%) done
+
+rule make_hamburger:
+    input: dohoon.roasted_onion, dohoon.cheese, dohoon.lettuce, dohoon.patty, dohoon.warm_bun, dohoon.tomato, dohoon.pickle
+    output: dohoon.hamburger
+    jobid: 0
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/hamburger/make/.snakemake.hmm1k2tn.wrapper.py
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T212220.804148.snakemake.log

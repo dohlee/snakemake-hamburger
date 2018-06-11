@@ -1,0 +1,193 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_beef
+	1	buy_bun
+	1	buy_cheese
+	1	buy_cucumber
+	1	buy_lettuce
+	1	buy_onion
+	1	buy_tomato
+	1	buy_vinegar
+	1	make_hamburger
+	1	make_patty
+	1	make_vinegar
+	1	roast_onion
+	1	warm_bun
+	1	wash_lettuce
+	1	wash_onion
+	1	wash_tomato
+	16
+
+rule buy_cucumber:
+    output: bigmac.cucumber
+    jobid: 12
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/cucumber/buy/.snakemake.bfnxkzvk.wrapper.py
+Finished job 12.
+1 of 16 steps (6%) done
+
+rule buy_beef:
+    output: bigmac.beef
+    jobid: 14
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/beef/buy/.snakemake.wncxl5fc.wrapper.py
+Finished job 14.
+2 of 16 steps (12%) done
+
+rule make_patty:
+    input: bigmac.beef
+    output: bigmac.patty
+    jobid: 6
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/patty/make/.snakemake.aa_nsu11.wrapper.py
+Removing temporary output file bigmac.beef.
+Finished job 6.
+3 of 16 steps (19%) done
+
+rule buy_lettuce:
+    output: bigmac.dirty_lettuce
+    jobid: 8
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/lettuce/buy/.snakemake.s77sj0p5.wrapper.py
+Finished job 8.
+4 of 16 steps (25%) done
+
+rule wash_lettuce:
+    input: bigmac.dirty_lettuce
+    output: bigmac.lettuce
+    jobid: 1
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/lettuce/wash/.snakemake.9t6048qv.wrapper.py
+Removing temporary output file bigmac.dirty_lettuce.
+Finished job 1.
+5 of 16 steps (31%) done
+
+rule buy_tomato:
+    output: bigmac.dirty_tomato
+    jobid: 9
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/tomato/buy/.snakemake.vw23wuhp.wrapper.py
+Finished job 9.
+6 of 16 steps (38%) done
+
+rule wash_tomato:
+    input: bigmac.dirty_tomato
+    output: bigmac.tomato
+    jobid: 2
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/tomato/wash/.snakemake.06ya5wbq.wrapper.py
+Removing temporary output file bigmac.dirty_tomato.
+Finished job 2.
+7 of 16 steps (44%) done
+
+rule buy_cheese:
+    output: bigmac.cheese
+    jobid: 7
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/cheese/buy/.snakemake.ok9hx_4k.wrapper.py
+Finished job 7.
+8 of 16 steps (50%) done
+
+rule buy_bun:
+    output: bigmac.cold_bun
+    jobid: 10
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/bun/buy/.snakemake.z0t_3x3b.wrapper.py
+Finished job 10.
+9 of 16 steps (56%) done
+
+rule warm_bun:
+    input: bigmac.cold_bun
+    output: bigmac.warm_bun
+    jobid: 3
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/bun/warm/.snakemake.m4w4jow_.wrapper.py
+Removing temporary output file bigmac.cold_bun.
+Finished job 3.
+10 of 16 steps (62%) done
+
+rule buy_onion:
+    output: bigmac.dirty_onion
+    jobid: 15
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/buy/.snakemake.gc76j38p.wrapper.py
+Finished job 15.
+11 of 16 steps (69%) done
+
+rule wash_onion:
+    input: bigmac.dirty_onion
+    output: bigmac.onion
+    jobid: 11
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/wash/.snakemake.zx0v5s8i.wrapper.py
+Removing temporary output file bigmac.dirty_onion.
+Finished job 11.
+12 of 16 steps (75%) done
+
+rule roast_onion:
+    input: bigmac.onion
+    output: bigmac.roasted_onion
+    jobid: 4
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/onion/roast/.snakemake.eak28d3h.wrapper.py
+Removing temporary output file bigmac.onion.
+Finished job 4.
+13 of 16 steps (81%) done
+
+rule buy_vinegar:
+    output: bigmac.vinegar
+    jobid: 13
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/vinegar/buy/.snakemake.9c9d6lqh.wrapper.py
+Finished job 13.
+14 of 16 steps (88%) done
+
+rule make_vinegar:
+    input: bigmac.cucumber, bigmac.vinegar
+    output: bigmac.pickle
+    jobid: 5
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/pickle/make/.snakemake.313_fy3n.wrapper.py
+Removing temporary output file bigmac.cucumber.
+Removing temporary output file bigmac.vinegar.
+Finished job 5.
+15 of 16 steps (94%) done
+
+rule make_hamburger:
+    input: bigmac.roasted_onion, bigmac.warm_bun, bigmac.lettuce, bigmac.pickle, bigmac.patty, bigmac.tomato, bigmac.cheese
+    output: bigmac.hamburger
+    jobid: 0
+    wildcards: name=bigmac
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/hamburger/make/.snakemake.9vrz6_fq.wrapper.py
+    Error in rule make_hamburger:
+        jobid: 0
+        output: bigmac.hamburger
+
+RuleException:
+CalledProcessError in line 17 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+Command ' set -euo pipefail;  /home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/hamburger/make/.snakemake.9vrz6_fq.wrapper.py ' returned non-zero exit status 1
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile", line 17, in __rule_make_hamburger
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-11T181039.447001.snakemake.log

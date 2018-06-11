@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	buy_cucumber
+	1	make_hamburger
+	1	make_patty
+	1	make_vinegar
+	4
+
+rule make_patty:
+    input: dohoon.beef
+    output: dohoon.patty
+    jobid: 1
+    wildcards: name=dohoon
+
+/home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/patty/make/.snakemake.g7jmgdxz.wrapper.py
+    Error in rule make_patty:
+        jobid: 1
+        output: dohoon.patty
+
+RuleException:
+CalledProcessError in line 122 of /mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile:
+Command ' set -euo pipefail;  /home/lee/.env/lab/bin/python3.5 /mnt/c/Users/lee/Desktop/snakemake-hamburger/patty/make/.snakemake.g7jmgdxz.wrapper.py ' returned non-zero exit status 1
+  File "/mnt/c/Users/lee/Desktop/snakemake-hamburger/Snakefile", line 122, in __rule_make_patty
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/c/Users/lee/Desktop/snakemake-hamburger/.snakemake/log/2018-06-10T212004.110635.snakemake.log
