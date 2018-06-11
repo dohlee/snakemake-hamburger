@@ -1,6 +1,17 @@
-#snakemake-hamburger
+# snakemake-hamburger
 
 This is a beginner's tutorial to **modular** Snakemake, which is inspired by [SandwichesWithSnakemake](https://github.com/leipzig/SandwichesWithSnakemake) tutorial by [Jeremy Leipzig](https://github.com/leipzig). 
+
+```shell
+                                                  warm_bun
+                                                   pickle
+                                               roasted_onion
+                                                   tomato
+                                                   cheese
+                                                   patty
+                                                  lettuce
+                                                  warm_bun
+```
 
 ## Introduction
 
@@ -14,7 +25,7 @@ Running bioinformatics pipeline is just like making hamburgers. You prepare raw 
 
 We are going to call each fine-grained step in making hamburgers like buying, washing, cooking ingredients as **wrappers**. Moreover, we aim to make the wrappers as **reusable**, and as **accessible** as possible.
 
-###Use wrappers!
+### Use wrappers!
 
 Reusability in snakemake can be maintained by various means: [sub-workflows](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html#sub-workflows), using [common-workflow-language](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html#common-workflow-language-cwl-support), and using [wrappers](https://snakemake.readthedocs.io/en/stable/snakefiles/modularization.html#wrappers). Here we focus on writing our own wrappers.
 
@@ -118,7 +129,7 @@ $ cat bigmac.hamburger
        tomato
        cheese
        patty
-       letuce
+      lettuce
       warm_bun
 ```
 

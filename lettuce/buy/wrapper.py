@@ -12,4 +12,4 @@ from snakemake.shell import shell
 extra = snakemake.params.get('extra', '')
 
 # Execute shell command.
-shell("echo '**le**tu**c***e' > {snakemake.output[0]}")
+shell("echo '**le**ttu**c***e' > {snakemake.output[0]}")
